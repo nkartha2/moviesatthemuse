@@ -22,6 +22,9 @@
 	*zoom:1;
 }
 
+a{
+	text-decoration: none;
+}
 /*body*/
 
 body{
@@ -33,88 +36,289 @@ body{
 }
 
 .container{
+	margin:0 auto;
 	max-width: 1300px;
 	padding:1%;
 	width: 100%;
 }
 
-h1{
+section{
+	position: relative;
+}
+
+section h1{
+	text-align: center;
+	color: #d41920;
+	text-transform: uppercase;
 	font-weight: 700;
 }
 
+section ol{
+	margin:3% 0;
+	padding:0;
+	list-style: none;
+	text-align: center;
+}
+
+section ol li{
+	display: inline-block;
+	width: 10%;
+	text-align: center;
+	/*margin:1%;*/
+}
+
+section ol li time{
+	color:#6d6a6a;
+	border-bottom: solid 1px #ccc;
+	padding:1%;
+}
+
+section ol li a:hover time{
+	color: #d41920;
+	border-bottom: solid 1px #d41920;
+}
+
+section ol li a:visited time{
+	color:#000;
+}
+
 article{
-	/*color:#fff;*/
-	/*background: url(../img/incendiesposter.jpg) center center;
-	background-size: cover;*/
 	height: 550px;
 	vertical-align: top;
 	position: relative;
-	padding:2%;
-	/*background-color: #ccc;*/
+	padding:2% 3%;
 	border:solid 1px #ccc;
-	/*box-shadow: 5px 5px #000;*/
-	/*margin:2%;*/
-	margin-bottom: 5%;
+	margin-bottom:1%;
 	width: 49%;
 	display: inline-block;
 }
 
-/*article button{
+form{
+	display: none;
+	background-color: #fcfcfc;
+	padding:2%;
+	position: absolute;
+	z-index: 3;
+	top:15%;
+	left:35%;
+	width: 35%;
+	-moz-box-shadow:  0 0 1px 1px #ccc;
+   	-webkit-box-shadow:  0 0 1px 1px #ccc;
+   	-o-box-shadow:  0 0 1px 1px #ccc;
+   	box-shadow:  0 0 1px 1px #ccc;
+}
+
+form button:nth-of-type(1){
+	color:#d41920;
+	background-color: #fcfcfc;
+	font-size: 1.5em;
+	margin:0;
 	position: absolute;
 	top:0;
-	right: 0;
-}*/
+    right:0;
+}
 
-time{
-	font-size: 1.2em;
-	/*float:left;*/
+form button:nth-of-type(2){
+	float:right;
+	margin-left:20%;
+	font-size: 1em;
+	}
+
+form label{
+	color: #6d6a6a;
+	font-family: 'Roboto', sans-serif;
+	display: block;
+}
+
+form input
+,textarea{
+	color:#6d6a6a;
+	margin:5%;
+	border:none;
+	-moz-box-shadow:  0 0 1px 1px #c8c8c8;
+   	-webkit-box-shadow:  0 0 1px 1px #c8c8c8;
+   	-o-box-shadow:  0 0 1px 1px #c8c8c8;
+   	box-shadow:  0 0 1px 1px #c8c8c8;
+
+}
+
+textarea
+,#name{
+	width: 80%;
+}
+
+textarea{
+	height: 150px;
 }
 
 
+article:nth-of-type(1),
+article:nth-of-type(3){
+	margin-right: 0.5%;
+}
+
+article h2{
+	width: 45%;
+	color:#6d6a6a;
+}
+
+article h3{
+	width: 45%;
+	font-weight: 100;
+	font-size: 0.9em;
+}
+
+article h4{
+	font-family: 'Roboto Condensed', sans-serif;
+	text-transform: uppercase;
+	color: #d41920;
+	font-size: 1.25em;
+	text-align: center;
+	position: relative;
+	top:15%;
+	/*bottom:2%;*/
+	/*right:2%;*/
+}
+
 article p
 {
-	font-size: 0.8em;
-	/*display: none;*/
-	/*position: relative;*/
-	/*top:50%;*/
-/*	top:0;
-	right:0;*/
-	width: 45%;
-	/*transform:translate(10%);*/
+	font-size: 1em;
+	width: 50%;
 	display: inline-block;
-	/*float:left;*/
 }
 
 article img{
 	position: absolute;
-	bottom:2%;
+	top:5%;
 	right:2%;
-	/*margin:2%;*/
-	/*float:right;*/
-/*	text-align: center;*/
-	/*transform:translateY(0);*/
-/*	position: absolute;
-	top:20%;
-	transform:translate(10%);
-	z-index: -1;*/
 	width: 45%;
 }
 
-button{
+article time{
+	position: absolute;
+	bottom:20%;
+	left:5%;
+	font-size: 1.2em;
 	font-weight: 100;
+}
+
+article button{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 1.2em;
 	text-transform: uppercase;
+	/*margin-top: 5%;*/
+	position: absolute;
+	left:30%;
+	/*right:2%;*/
+	bottom:5%;
+	padding:2%;
+	width: 45%;
 	color:#ccc;
 	display: block;
 	background-color: #d41920;
 	border:none;
 }
 
-@media screen and (max-width:700px){
+button:hover{
+	color:#d41920;
+	background-color: #ccc;
+	-moz-transition: all 0.1s ease-out;
+	-webkit-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
+}
+
+@media screen and (max-width:1200px){
+	section ol{
+		width: 100%;
+	}
+
+	section ol li{
+		width: 24%;
+		text-align: center;
+	}
+
 	article{
 		width: 100%;
 		display: block;
+		height: auto;
+	}
+
+	article time,
+	article button,
+	article h4{
+		position: static;
+	}
+
+	article h3{
+		font-size: 1.3em;
+	}
+
+	article p{
+		width: 50%;
+	}
+
+	article img{
+		width: 25%;
+		/*margin-top: 0;*/
+		/*position: relative;
+		top:-20%;*/
+		/*float:right;*/
+		vertical-align: top;
+	}
+
+	article time{
+		display: block;
+		margin:5% 0;
+	}
+
+	article h4{
+		text-align: left;
+		font-size: 1.5em;
 	}
 
 }
 
+@media screen and (max-width:700px){
+
+	section ol li{
+		width: 49%;
+		margin:3% 0;
+		text-align: center;
+	}
+
+	article img
+	,article p
+	,article button
+	/*,article time
+	,article h4*/{
+		/*width: 100%;*/
+		position: static;
+		display: block;
+		float:none;
+		margin: 0 auto;
+	}
+
+	article h3
+	,article p{
+		width: 100%;
+		margin:3% 0;
+		line-height: 1.2em;
+	}
+
+	article img{
+		width: 65%;
+	}
+
+	article time
+	,article h4{
+		text-align: center;
+		margin:3% 0;
+	}
+
+	article button{
+		width: 70%;
+	}
+
+}
 
