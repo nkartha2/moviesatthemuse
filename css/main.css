@@ -25,12 +25,29 @@
 a{
 	text-decoration: none;
 }
-/*body*/
 
+ul, ol{
+	padding:0;
+	margin:0;
+}
+
+button{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	padding:2%;
+	color:#ccc;
+	background-color: #d41920;
+	border:none;
+}
+
+/************************body and container******************/
 body{
 	font-family: 'Roboto', sans-serif;
 	text-rendering: optimizelegibility;
 	width: 100%;
+	max-width: 1400px;
 	color: #020202;
 	background-color: #fcfcfc;
 }
@@ -42,57 +59,86 @@ body{
 	width: 100%;
 }
 
-section{
+/************************header******************/
+
+header{
+	position: absolute;
+	bottom:30%;
+	right:0;
+	z-index: 999;
+	color:#d41920;
+}
+
+header h1
+{	
+	opacity: 0.8;
+	font-size: 4.5em;
+	font-family: 'Roboto Condensed', sans-serif;
+	padding:2%;
+	margin:0;
+	
+}
+
+/************************slider******************/
+
+ul.bxslider li{
+	background-color: #000;
+	height: 500px;
+}
+
+.bx-controls{
+	display: none;
+}
+
+.bxslider img{
+	position: relative;
+	top:-150px;
+	width: 100%;
+	float:right;
+}
+
+/************************show nav******************/
+
+section#shows{
 	position: relative;
 }
 
-section h1{
+#shows h1{
 	text-align: center;
-	color: #d41920;
+	color: #6d6a6a;
+	font-size: 2.5em;
 	text-transform: uppercase;
 	font-weight: 700;
 }
 
-section ol{
+#shows ol{
 	margin:3% 0;
-	padding:0;
 	list-style: none;
 	text-align: center;
 }
 
-section ol li{
+#shows ol li{
 	display: inline-block;
 	width: 10%;
 	text-align: center;
-	/*margin:1%;*/
 }
 
-section ol li time{
+#shows ol li time{
 	color:#6d6a6a;
 	border-bottom: solid 1px #ccc;
 	padding:1%;
 }
 
-section ol li a:hover time{
+#shows ol li a:hover time{
 	color: #d41920;
 	border-bottom: solid 1px #d41920;
 }
 
-section ol li a:visited time{
-	color:#000;
+#shows ol li a:visited time{
+	color:#d41920;
 }
 
-article{
-	height: 550px;
-	vertical-align: top;
-	position: relative;
-	padding:2% 3%;
-	border:solid 1px #ccc;
-	margin-bottom:1%;
-	width: 49%;
-	display: inline-block;
-}
-
+/************************form******************/
 form{
 	display: none;
 	background-color: #fcfcfc;
@@ -119,8 +165,7 @@ form button:nth-of-type(1){
 }
 
 form button:nth-of-type(2){
-	float:right;
-	margin-left:20%;
+	margin-left:5%;
 	font-size: 1em;
 	}
 
@@ -151,6 +196,17 @@ textarea{
 	height: 150px;
 }
 
+/************************movie options******************/
+article{
+	height: 550px;
+	vertical-align: top;
+	position: relative;
+	padding:2% 3%;
+	border:solid 1px #ccc;
+	margin-bottom:1%;
+	width: 49%;
+	display: inline-block;
+}
 
 article:nth-of-type(1),
 article:nth-of-type(3){
@@ -176,8 +232,6 @@ article h4{
 	text-align: center;
 	position: relative;
 	top:15%;
-	/*bottom:2%;*/
-	/*right:2%;*/
 }
 
 article p
@@ -203,21 +257,10 @@ article time{
 }
 
 article button{
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 300;
-	font-size: 1.2em;
-	text-transform: uppercase;
-	/*margin-top: 5%;*/
 	position: absolute;
 	left:30%;
-	/*right:2%;*/
 	bottom:5%;
-	padding:2%;
 	width: 45%;
-	color:#ccc;
-	display: block;
-	background-color: #d41920;
-	border:none;
 }
 
 button:hover{
@@ -228,14 +271,38 @@ button:hover{
 	transition: all 0.1s ease-out;
 }
 
+/************************************************media queries******************/
+
 @media screen and (max-width:1200px){
-	section ol{
+
+	header{
+		top:30%;
+	}
+	
+	header h1{
+		font-size: 4em;
+	}
+
+	ul.bxslider li{
+		height: 400px;
+	}
+
+	.bxslider img{
+		position: static;
+	}
+
+	#shows ol{
 		width: 100%;
 	}
 
-	section ol li{
+	#shows ol li{
 		width: 24%;
 		text-align: center;
+	}
+
+	form{
+		left:15%;
+		width: 70%;
 	}
 
 	article{
@@ -260,10 +327,6 @@ button:hover{
 
 	article img{
 		width: 25%;
-		/*margin-top: 0;*/
-		/*position: relative;
-		top:-20%;*/
-		/*float:right;*/
 		vertical-align: top;
 	}
 
@@ -281,7 +344,15 @@ button:hover{
 
 @media screen and (max-width:700px){
 
-	section ol li{
+	header h1{
+		font-size: 2em;
+	}
+
+	ul.bxslider li{
+		height: 250px;
+	}
+
+	#shows ol li{
 		width: 49%;
 		margin:3% 0;
 		text-align: center;
@@ -289,10 +360,7 @@ button:hover{
 
 	article img
 	,article p
-	,article button
-	/*,article time
-	,article h4*/{
-		/*width: 100%;*/
+	,article button{
 		position: static;
 		display: block;
 		float:none;
@@ -319,6 +387,4 @@ button:hover{
 	article button{
 		width: 70%;
 	}
-
 }
-
