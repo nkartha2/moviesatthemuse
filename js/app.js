@@ -7,12 +7,22 @@ $(document).ready(function(){
     return false;
 	});
 
-	$('button').click(function (){
+	$('article button').click(function (){
 		$('form').css('display','block');
+		$('form').css('position', 'fixed');
 	});
 
 	$('form button:nth-of-type(1)').click(function(){
 		$('form').css('display', 'none');
 	});
 
+	$('.bxslider').bxSlider({
+	  preloadImages: 'all',
+	  touchEnabled: true,
+	  controls: false,
+	  infiniteLoop: true,
+	  auto:true,
+	  useCSS: false,
+	  pause:4500
+	});
 });
