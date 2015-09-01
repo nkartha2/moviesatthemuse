@@ -1,0 +1,120 @@
+/*box-sizing*/
+*, *:before, *:after{
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing: border-box;
+}
+
+/*clearfix*/
+
+.clearfix:before, 
+.clearfix:after{
+	content:"";
+	display: table;
+}
+
+.clearfix:after{
+	clear:both;
+}
+
+.clearfix{
+	*zoom:1;
+}
+
+/*body*/
+
+body{
+	font-family: 'Roboto', sans-serif;
+	text-rendering: optimizelegibility;
+	width: 100%;
+	color: #020202;
+	background-color: #fcfcfc;
+}
+
+.container{
+	max-width: 1300px;
+	padding:1%;
+	width: 100%;
+}
+
+h1{
+	font-weight: 700;
+}
+
+article{
+	/*color:#fff;*/
+	/*background: url(../img/incendiesposter.jpg) center center;
+	background-size: cover;*/
+	height: 550px;
+	vertical-align: top;
+	position: relative;
+	padding:2%;
+	/*background-color: #ccc;*/
+	border:solid 1px #ccc;
+	/*box-shadow: 5px 5px #000;*/
+	/*margin:2%;*/
+	margin-bottom: 5%;
+	width: 49%;
+	display: inline-block;
+}
+
+/*article button{
+	position: absolute;
+	top:0;
+	right: 0;
+}*/
+
+time{
+	font-size: 1.2em;
+	/*float:left;*/
+}
+
+
+article p
+{
+	font-size: 0.8em;
+	/*display: none;*/
+	/*position: relative;*/
+	/*top:50%;*/
+/*	top:0;
+	right:0;*/
+	width: 45%;
+	/*transform:translate(10%);*/
+	display: inline-block;
+	/*float:left;*/
+}
+
+article img{
+	position: absolute;
+	bottom:2%;
+	right:2%;
+	/*margin:2%;*/
+	/*float:right;*/
+/*	text-align: center;*/
+	/*transform:translateY(0);*/
+/*	position: absolute;
+	top:20%;
+	transform:translate(10%);
+	z-index: -1;*/
+	width: 45%;
+}
+
+button{
+	font-weight: 100;
+	text-transform: uppercase;
+	color:#ccc;
+	display: block;
+	background-color: #d41920;
+	border:none;
+}
+
+@media screen and (max-width:700px){
+	article{
+		width: 100%;
+		display: block;
+	}
+
+}
+
+
